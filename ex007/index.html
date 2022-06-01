@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Operadores de comparação</title>
+</head>
+<body>
+    <h1>Lógica de Programação com java-script</h1>
+
+
+    <script>
+        /*
+        == igualdade (valor)
+        != diferente(valor)
+        ===igualdade(valor e tipo)
+        !==diferente (valor e tipo)
+        > (Maior)
+        >=(Maior ou igual)
+        <(Menor)
+        <=(Menor ou igual)
+      */
+        //O operador = não e operador de comparação,e sim de atribuição
+
+        //O operador '= >' não é operador de comparação, mas sim a notação para uma arrow function em javascript
+        
+        //Em algumas linguagens de programação, o <> é o operador de "diferente !="
+        
+        //Desafio
+        //pedir para um usuario digitar dois números e mostrar um boolean indicando se a média for maior que 5
+
+        var n1 = prompt('Digite um numero');
+        n1 = parseFloat(n1);
+        var n2 = prompt('Digite um numero');
+        n2 = parseFloat(n2);
+        var media = (n1+n2)>5;
+        alert('os numeros digitados são maior que 5? '+ media);
+
+    </script>
+
+
+
+</body>
+</html>
