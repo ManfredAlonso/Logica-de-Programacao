@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções que retornam </title>
+</head>
+<body>
+    <h1>Lógica de programação com java-script</h1>
+
+    <button onclick="mostrarareaAlert()">mostrar area num alert</button>
+
+
+    <button onclick="mostrarareaOutput()">mostrar area no output</button>
+
+    <div id="output"></div>
+    <script>
+        //funções que retornam valores são úteis para que o desenvolvedor tenha autonomia para decidir o que deseja fazer com o valor retonado
+
+        var largura = parseFloat(prompt('Digite a largura'));
+        var altura = parseFloat(prompt('Digite a altura'));
+
+        function mostrarareaAlert(){
+            var area = calcularArea(largura,altura);
+
+            alert('a área total é: '+area);
+         
+        }
+        function mostrarareaOutput(){
+            var area = calcularArea(largura,altura);
+
+            document.querySelector('#output').innerHTML='a área total é: ' + area;
+            console.log(mostrarareaOutput);
+         
+        }
+
+        function calcularArea(l,a){
+            return l * a;
+
+        }
+
+    </script>
+</body>
+</html>
