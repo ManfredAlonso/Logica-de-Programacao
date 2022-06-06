@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco try....catch(erro)</title>
+</head>
+<body>
+    <h1>Lógica de programação com java-script</h1>
+
+
+
+    
+    <button onclick="iniciarcalculo('+')">+</button>
+    <button onclick="iniciarcalculo('-')">-</button>
+    <button onclick="iniciarcalculo('*')">*</button>
+    <button onclick="iniciarcalculo('/')">/</button>
+    
+    <div class="output"></div>
+    
+    <script>
+        /*Problema:
+            Pedir para o usuário difitar dois números que representam os lados de um retângulo. Mostrar na tela a área total.Esse código deve ser executador quando a página é aberta e também quando clicar num botão. Oque acontece se o usuário inserir um dado inválido?
+        */
+
+        var n2 = parseFloat(prompt('digite um numero'));
+        escreve(n2);
+
+        function iniciarcalculo(simbolo) {
+            var n1 = document.querySelector('.output').textContent;
+            n1 = parseFloat(n1)
+            var n2 = parseFloat(prompt('digite outro número'));
+           try{
+            var msg = calcular(simbolo, n1, n2);
+           }catch(e){
+                alert(e);
+                return;
+           }
+           
+            var msg = calcular(simbolo, n1, n2);
+            escreve(msg);
+        }
+
+        function escreve(mensagem) {
+            var output = document.querySelector('.output');
+            output.innerHTML = mensagem;
+        }
+
+        function calcular(simbolo, n1, n2) {
+
+            if (simbolo !== '+' && simbolo !== '-' && simbolo !== '*' && simbolo !== '/') {
+                throw new Error('digite um simbolo valido');
+            }
+
+            if (isNaN(n1) || isNaN(n2)) {
+                throw new Error('chama passando somente números');
+            }
+
+            var numerocalculado = null;
+
+            switch (simbolo) {
+                case '+':
+                    numerocalculado = n1 + n2;
+                    break
+                case '-':
+                    numerocalculado = n1 - n2;
+                    break
+                case '*':
+                    numerocalculado = n1 * n2;
+                    break;
+                case '/':
+                    numerocalculado = n1 / n2;
+            }
+            return numerocalculado;
+        }
+
+        /*Try...Catch(erro):
+            Tratam da exceção.
+            Não deveria ter ocorrido,mas ocorreu.
+            Nunca subestime a capacidade do usuário.
+        */
+    </script>
+</body>
+</html>
