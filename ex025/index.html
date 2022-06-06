@@ -9,16 +9,34 @@
 <body>
     <h1>Lógica de programação com java-script</h1>
 
-
+    <div id="output"></div>
 
 
     <script>
-        var pessoas = [];
+        /* var pessoas = [];
         pessoas[0]='jose';
         pessoas[1]='maria';
         pessoas[2]='joao';
+        var nomes = new Array('maria','ze','joao',2,true,false,function(){}) */
 
-        var nomes = new Array('maria','ze','joao',2,true,false,function(){})
+        /*Problema:
+            mostrar na tela todos os produtos disponíveis para a compra.
+            Os nomes dos produtos estão agrupados num array
+        */
+
+        var produtos = new Array('Carros','Geladeiras','Sofás','Computadores','Arvores','casas');
+        
+        produtos.push('videogames','robô')
+        
+        var output=document.querySelector("#output");
+        
+        var msg = '';
+
+        for(var i=0; i<produtos.length;i++){
+            msg+='produto '+(i+1)+':'+produtos[i]+'<br>'
+        }
+        output.innerHTML = msg;
+        console.log(output)
     </script>
 </body>
 </html>
