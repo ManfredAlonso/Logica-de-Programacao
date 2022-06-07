@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grande quantidade de dados-Array de objetos</title>
+</head>
+<body>
+    <h1>Lógica de programação com java-script</h1>
+
+
+    <div id="output"></div>
+    <script>
+        /*var nomes = ['maria','joão']
+        var prod = {'nome':'caneta','preco':1.1 }
+        var produtos = [prod, {'nome': 'lapis','preco':2}]*/
+
+        var produtos = [
+            {"nome": "caneta","preco":2,"estoque":10}, 
+            {"nome": "lapis", "preco":1.5,"estoque":10},
+            {"nome": "borracha", "preco":5,"estoque":10}
+        ];
+
+
+        var msg='';
+
+        for(var i=0;i<produtos.length;i++){
+            console.log(produtos[i].preco);
+            msg+="<h2>seu carrinho :"+produtos[i].nome +"</h2>";
+            msg+="<h5>seu total e: "+ produtos[i].preco+"</h5>"
+            msg+="<h5>Disponiveis: "+ produtos[i].estoque+"</h5>"
+        }
+
+        document.querySelector('#output').innerHTML=msg;
+
+    </script>
+
+
+</body>
+</html>
